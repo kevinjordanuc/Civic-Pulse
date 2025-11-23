@@ -1,0 +1,29 @@
+[
+  {
+    "user_id": "118a36bf-261d-4e2e-9cb9-cc4e5c478969",
+    "email": "gansta555@hotmail.com",
+    "password": "Maga17@5",
+    "consent_notifications": true,
+    "estado": "CDMX",
+    "municipio": "Ciudad de México",
+    "idioma": "es",
+    "intereses": [
+      "movilidad",
+      "salud",
+      "reciclaje",
+      "ia"
+    ],
+    "accesibilidad": {
+      "tamano_fuente": 16,
+      "lectura_en_voz_alta": true,
+      "traduccion_automatica": false
+    },
+    "frecuencia_notificaciones": "diaria",
+    "etiquetas_propias": [
+      "movilidad",
+      "salud",
+      "reciclaje",
+      "ia"
+    ]
+  }
+]

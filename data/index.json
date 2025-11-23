@@ -1,0 +1,1792 @@
+{
+  "ev": [
+    {
+      "collection": "events",
+      "pos": 0
+    },
+    {
+      "collection": "events",
+      "pos": 1
+    },
+    {
+      "collection": "events",
+      "pos": 2
+    },
+    {
+      "collection": "events",
+      "pos": 3
+    }
+  ],
+  "001": [
+    {
+      "collection": "events",
+      "pos": 0
+    },
+    {
+      "collection": "services",
+      "pos": 0
+    },
+    {
+      "collection": "ballots",
+      "pos": 0
+    },
+    {
+      "collection": "notifications",
+      "pos": 0
+    }
+  ],
+  "cabildo": [
+    {
+      "collection": "events",
+      "pos": 0
+    },
+    {
+      "collection": "notifications",
+      "pos": 1
+    }
+  ],
+  "abierto": [
+    {
+      "collection": "events",
+      "pos": 0
+    },
+    {
+      "collection": "notifications",
+      "pos": 1
+    }
+  ],
+  "sobre": [
+    {
+      "collection": "events",
+      "pos": 0
+    },
+    {
+      "collection": "events",
+      "pos": 2
+    },
+    {
+      "collection": "notifications",
+      "pos": 1
+    }
+  ],
+  "movilidad": [
+    {
+      "collection": "events",
+      "pos": 0
+    },
+    {
+      "collection": "ballots",
+      "pos": 1
+    },
+    {
+      "collection": "notifications",
+      "pos": 0
+    }
+  ],
+  "sesión": [
+    {
+      "collection": "events",
+      "pos": 0
+    }
+  ],
+  "discutir": [
+    {
+      "collection": "events",
+      "pos": 0
+    }
+  ],
+  "plan": [
+    {
+      "collection": "events",
+      "pos": 0
+    }
+  ],
+  "integral": [
+    {
+      "collection": "events",
+      "pos": 0
+    }
+  ],
+  "sostenible": [
+    {
+      "collection": "events",
+      "pos": 0
+    }
+  ],
+  "municipio": [
+    {
+      "collection": "events",
+      "pos": 0
+    }
+  ],
+  "19": [
+    {
+      "collection": "events",
+      "pos": 0
+    },
+    {
+      "collection": "events",
+      "pos": 3
+    },
+    {
+      "collection": "services",
+      "pos": 0
+    }
+  ],
+  "432608": [
+    {
+      "collection": "events",
+      "pos": 0
+    }
+  ],
+  "99": [
+    {
+      "collection": "events",
+      "pos": 0
+    },
+    {
+      "collection": "services",
+      "pos": 0
+    }
+  ],
+  "133209": [
+    {
+      "collection": "events",
+      "pos": 0
+    }
+  ],
+  "ciudad": [
+    {
+      "collection": "events",
+      "pos": 0
+    },
+    {
+      "collection": "services",
+      "pos": 0
+    },
+    {
+      "collection": "notifications",
+      "pos": 0
+    },
+    {
+      "collection": "notifications",
+      "pos": 2
+    }
+  ],
+  "méxico": [
+    {
+      "collection": "events",
+      "pos": 0
+    },
+    {
+      "collection": "services",
+      "pos": 0
+    },
+    {
+      "collection": "notifications",
+      "pos": 0
+    },
+    {
+      "collection": "notifications",
+      "pos": 2
+    }
+  ],
+  "cdmx": [
+    {
+      "collection": "events",
+      "pos": 0
+    },
+    {
+      "collection": "services",
+      "pos": 0
+    },
+    {
+      "collection": "ballots",
+      "pos": 0
+    }
+  ],
+  "2025": [
+    {
+      "collection": "events",
+      "pos": 0
+    },
+    {
+      "collection": "events",
+      "pos": 1
+    },
+    {
+      "collection": "events",
+      "pos": 2
+    },
+    {
+      "collection": "events",
+      "pos": 3
+    }
+  ],
+  "11": [
+    {
+      "collection": "events",
+      "pos": 0
+    },
+    {
+      "collection": "events",
+      "pos": 1
+    },
+    {
+      "collection": "events",
+      "pos": 2
+    },
+    {
+      "collection": "events",
+      "pos": 3
+    }
+  ],
+  "22t10": [
+    {
+      "collection": "events",
+      "pos": 0
+    }
+  ],
+  "00": [
+    {
+      "collection": "events",
+      "pos": 0
+    },
+    {
+      "collection": "events",
+      "pos": 1
+    },
+    {
+      "collection": "events",
+      "pos": 2
+    },
+    {
+      "collection": "events",
+      "pos": 3
+    },
+    {
+      "collection": "services",
+      "pos": 0
+    },
+    {
+      "collection": "services",
+      "pos": 1
+    },
+    {
+      "collection": "services",
+      "pos": 2
+    }
+  ],
+  "22t12": [
+    {
+      "collection": "events",
+      "pos": 0
+    }
+  ],
+  "30": [
+    {
+      "collection": "events",
+      "pos": 0
+    }
+  ],
+  "av": [
+    {
+      "collection": "events",
+      "pos": 0
+    }
+  ],
+  "plaza": [
+    {
+      "collection": "events",
+      "pos": 0
+    }
+  ],
+  "constitución": [
+    {
+      "collection": "events",
+      "pos": 0
+    }
+  ],
+  "centro": [
+    {
+      "collection": "events",
+      "pos": 0
+    },
+    {
+      "collection": "events",
+      "pos": 2
+    },
+    {
+      "collection": "services",
+      "pos": 1
+    }
+  ],
+  "histórico": [
+    {
+      "collection": "events",
+      "pos": 0
+    }
+  ],
+  "https": [
+    {
+      "collection": "events",
+      "pos": 0
+    },
+    {
+      "collection": "events",
+      "pos": 1
+    },
+    {
+      "collection": "events",
+      "pos": 2
+    },
+    {
+      "collection": "events",
+      "pos": 3
+    },
+    {
+      "collection": "services",
+      "pos": 0
+    },
+    {
+      "collection": "services",
+      "pos": 1
+    },
+    {
+      "collection": "services",
+      "pos": 2
+    },
+    {
+      "collection": "ballots",
+      "pos": 0
+    },
+    {
+      "collection": "ballots",
+      "pos": 1
+    }
+  ],
+  "www": [
+    {
+      "collection": "events",
+      "pos": 0
+    },
+    {
+      "collection": "events",
+      "pos": 1
+    },
+    {
+      "collection": "services",
+      "pos": 0
+    },
+    {
+      "collection": "services",
+      "pos": 2
+    }
+  ],
+  "gob": [
+    {
+      "collection": "events",
+      "pos": 0
+    },
+    {
+      "collection": "events",
+      "pos": 1
+    },
+    {
+      "collection": "events",
+      "pos": 2
+    },
+    {
+      "collection": "events",
+      "pos": 3
+    },
+    {
+      "collection": "services",
+      "pos": 1
+    },
+    {
+      "collection": "services",
+      "pos": 2
+    },
+    {
+      "collection": "ballots",
+      "pos": 0
+    }
+  ],
+  "mx": [
+    {
+      "collection": "events",
+      "pos": 0
+    },
+    {
+      "collection": "events",
+      "pos": 1
+    },
+    {
+      "collection": "events",
+      "pos": 2
+    },
+    {
+      "collection": "events",
+      "pos": 3
+    },
+    {
+      "collection": "services",
+      "pos": 0
+    },
+    {
+      "collection": "services",
+      "pos": 1
+    },
+    {
+      "collection": "services",
+      "pos": 2
+    },
+    {
+      "collection": "ballots",
+      "pos": 0
+    },
+    {
+      "collection": "ballots",
+      "pos": 1
+    }
+  ],
+  "eventos": [
+    {
+      "collection": "events",
+      "pos": 0
+    }
+  ],
+  "002": [
+    {
+      "collection": "events",
+      "pos": 1
+    },
+    {
+      "collection": "services",
+      "pos": 1
+    },
+    {
+      "collection": "ballots",
+      "pos": 1
+    },
+    {
+      "collection": "notifications",
+      "pos": 1
+    }
+  ],
+  "feria": [
+    {
+      "collection": "events",
+      "pos": 1
+    }
+  ],
+  "servicios": [
+    {
+      "collection": "events",
+      "pos": 1
+    }
+  ],
+  "salud": [
+    {
+      "collection": "events",
+      "pos": 1
+    }
+  ],
+  "comunitarios": [
+    {
+      "collection": "events",
+      "pos": 1
+    }
+  ],
+  "jornada": [
+    {
+      "collection": "events",
+      "pos": 1
+    },
+    {
+      "collection": "events",
+      "pos": 3
+    }
+  ],
+  "gratuita": [
+    {
+      "collection": "events",
+      "pos": 1
+    }
+  ],
+  "vacunación": [
+    {
+      "collection": "events",
+      "pos": 1
+    }
+  ],
+  "chequeo": [
+    {
+      "collection": "events",
+      "pos": 1
+    }
+  ],
+  "general": [
+    {
+      "collection": "events",
+      "pos": 1
+    }
+  ],
+  "orientación": [
+    {
+      "collection": "events",
+      "pos": 1
+    },
+    {
+      "collection": "services",
+      "pos": 1
+    }
+  ],
+  "nutricional": [
+    {
+      "collection": "events",
+      "pos": 1
+    }
+  ],
+  "20": [
+    {
+      "collection": "events",
+      "pos": 1
+    },
+    {
+      "collection": "services",
+      "pos": 1
+    }
+  ],
+  "659699": [
+    {
+      "collection": "events",
+      "pos": 1
+    }
+  ],
+  "103": [
+    {
+      "collection": "events",
+      "pos": 1
+    },
+    {
+      "collection": "services",
+      "pos": 1
+    }
+  ],
+  "349609": [
+    {
+      "collection": "events",
+      "pos": 1
+    }
+  ],
+  "guadalajara": [
+    {
+      "collection": "events",
+      "pos": 1
+    },
+    {
+      "collection": "services",
+      "pos": 1
+    },
+    {
+      "collection": "ballots",
+      "pos": 1
+    },
+    {
+      "collection": "notifications",
+      "pos": 2
+    }
+  ],
+  "jalisco": [
+    {
+      "collection": "events",
+      "pos": 1
+    },
+    {
+      "collection": "services",
+      "pos": 1
+    }
+  ],
+  "25t09": [
+    {
+      "collection": "events",
+      "pos": 1
+    }
+  ],
+  "25t16": [
+    {
+      "collection": "events",
+      "pos": 1
+    }
+  ],
+  "parque": [
+    {
+      "collection": "events",
+      "pos": 1
+    }
+  ],
+  "revolución": [
+    {
+      "collection": "events",
+      "pos": 1
+    }
+  ],
+  "col": [
+    {
+      "collection": "events",
+      "pos": 1
+    }
+  ],
+  "americana": [
+    {
+      "collection": "events",
+      "pos": 1
+    }
+  ],
+  "003": [
+    {
+      "collection": "events",
+      "pos": 2
+    },
+    {
+      "collection": "services",
+      "pos": 2
+    },
+    {
+      "collection": "notifications",
+      "pos": 2
+    }
+  ],
+  "taller": [
+    {
+      "collection": "events",
+      "pos": 2
+    }
+  ],
+  "educativo": [
+    {
+      "collection": "events",
+      "pos": 2
+    }
+  ],
+  "presupuesto": [
+    {
+      "collection": "events",
+      "pos": 2
+    },
+    {
+      "collection": "ballots",
+      "pos": 0
+    }
+  ],
+  "participativo": [
+    {
+      "collection": "events",
+      "pos": 2
+    }
+  ],
+  "explicación": [
+    {
+      "collection": "events",
+      "pos": 2
+    }
+  ],
+  "proyectos": [
+    {
+      "collection": "events",
+      "pos": 2
+    },
+    {
+      "collection": "ballots",
+      "pos": 0
+    }
+  ],
+  "propuestos": [
+    {
+      "collection": "events",
+      "pos": 2
+    }
+  ],
+  "acompañamiento": [
+    {
+      "collection": "events",
+      "pos": 2
+    }
+  ],
+  "votar": [
+    {
+      "collection": "events",
+      "pos": 2
+    },
+    {
+      "collection": "ballots",
+      "pos": 0
+    },
+    {
+      "collection": "notifications",
+      "pos": 2
+    }
+  ],
+  "forma": [
+    {
+      "collection": "events",
+      "pos": 2
+    }
+  ],
+  "informada": [
+    {
+      "collection": "events",
+      "pos": 2
+    }
+  ],
+  "25": [
+    {
+      "collection": "events",
+      "pos": 2
+    },
+    {
+      "collection": "services",
+      "pos": 2
+    }
+  ],
+  "686614": [
+    {
+      "collection": "events",
+      "pos": 2
+    }
+  ],
+  "100": [
+    {
+      "collection": "events",
+      "pos": 2
+    },
+    {
+      "collection": "services",
+      "pos": 2
+    }
+  ],
+  "316113": [
+    {
+      "collection": "events",
+      "pos": 2
+    }
+  ],
+  "monterrey": [
+    {
+      "collection": "events",
+      "pos": 2
+    },
+    {
+      "collection": "services",
+      "pos": 2
+    },
+    {
+      "collection": "notifications",
+      "pos": 2
+    }
+  ],
+  "nuevo": [
+    {
+      "collection": "events",
+      "pos": 2
+    },
+    {
+      "collection": "services",
+      "pos": 2
+    },
+    {
+      "collection": "notifications",
+      "pos": 1
+    }
+  ],
+  "león": [
+    {
+      "collection": "events",
+      "pos": 2
+    },
+    {
+      "collection": "services",
+      "pos": 2
+    }
+  ],
+  "educacion": [
+    {
+      "collection": "events",
+      "pos": 2
+    }
+  ],
+  "28t17": [
+    {
+      "collection": "events",
+      "pos": 2
+    }
+  ],
+  "28t19": [
+    {
+      "collection": "events",
+      "pos": 2
+    }
+  ],
+  "cultural": [
+    {
+      "collection": "events",
+      "pos": 2
+    }
+  ],
+  "barrio": [
+    {
+      "collection": "events",
+      "pos": 2
+    }
+  ],
+  "antiguo": [
+    {
+      "collection": "events",
+      "pos": 2
+    }
+  ],
+  "004": [
+    {
+      "collection": "events",
+      "pos": 3
+    }
+  ],
+  "seguridad": [
+    {
+      "collection": "events",
+      "pos": 3
+    },
+    {
+      "collection": "ballots",
+      "pos": 1
+    },
+    {
+      "collection": "notifications",
+      "pos": 1
+    }
+  ],
+  "vial": [
+    {
+      "collection": "events",
+      "pos": 3
+    }
+  ],
+  "peatones": [
+    {
+      "collection": "events",
+      "pos": 3
+    }
+  ],
+  "demostraciones": [
+    {
+      "collection": "events",
+      "pos": 3
+    }
+  ],
+  "prácticas": [
+    {
+      "collection": "events",
+      "pos": 3
+    }
+  ],
+  "materiales": [
+    {
+      "collection": "events",
+      "pos": 3
+    }
+  ],
+  "lúdicos": [
+    {
+      "collection": "events",
+      "pos": 3
+    }
+  ],
+  "familias": [
+    {
+      "collection": "events",
+      "pos": 3
+    }
+  ],
+  "041297": [
+    {
+      "collection": "events",
+      "pos": 3
+    }
+  ],
+  "98": [
+    {
+      "collection": "events",
+      "pos": 3
+    }
+  ],
+  "2062": [
+    {
+      "collection": "events",
+      "pos": 3
+    }
+  ],
+  "puebla": [
+    {
+      "collection": "events",
+      "pos": 3
+    },
+    {
+      "collection": "notifications",
+      "pos": 1
+    }
+  ],
+  "24t11": [
+    {
+      "collection": "events",
+      "pos": 3
+    }
+  ],
+  "24t14": [
+    {
+      "collection": "events",
+      "pos": 3
+    }
+  ],
+  "zócalo": [
+    {
+      "collection": "events",
+      "pos": 3
+    }
+  ],
+  "srv": [
+    {
+      "collection": "services",
+      "pos": 0
+    },
+    {
+      "collection": "services",
+      "pos": 1
+    },
+    {
+      "collection": "services",
+      "pos": 2
+    }
+  ],
+  "módulo": [
+    {
+      "collection": "services",
+      "pos": 0
+    }
+  ],
+  "móvil": [
+    {
+      "collection": "services",
+      "pos": 0
+    }
+  ],
+  "ine": [
+    {
+      "collection": "services",
+      "pos": 0
+    }
+  ],
+  "trámites": [
+    {
+      "collection": "services",
+      "pos": 0
+    },
+    {
+      "collection": "services",
+      "pos": 2
+    }
+  ],
+  "426686": [
+    {
+      "collection": "services",
+      "pos": 0
+    }
+  ],
+  "167664": [
+    {
+      "collection": "services",
+      "pos": 0
+    }
+  ],
+  "lunes": [
+    {
+      "collection": "services",
+      "pos": 0
+    },
+    {
+      "collection": "services",
+      "pos": 1
+    },
+    {
+      "collection": "services",
+      "pos": 2
+    }
+  ],
+  "viernes": [
+    {
+      "collection": "services",
+      "pos": 0
+    },
+    {
+      "collection": "services",
+      "pos": 2
+    }
+  ],
+  "09": [
+    {
+      "collection": "services",
+      "pos": 0
+    },
+    {
+      "collection": "services",
+      "pos": 2
+    }
+  ],
+  "17": [
+    {
+      "collection": "services",
+      "pos": 0
+    }
+  ],
+  "800": [
+    {
+      "collection": "services",
+      "pos": 0
+    }
+  ],
+  "433": [
+    {
+      "collection": "services",
+      "pos": 0
+    }
+  ],
+  "2000": [
+    {
+      "collection": "services",
+      "pos": 0
+    }
+  ],
+  "credencial": [
+    {
+      "collection": "services",
+      "pos": 0
+    }
+  ],
+  "ciudadana": [
+    {
+      "collection": "services",
+      "pos": 1
+    }
+  ],
+  "atención": [
+    {
+      "collection": "services",
+      "pos": 1
+    }
+  ],
+  "67359": [
+    {
+      "collection": "services",
+      "pos": 1
+    }
+  ],
+  "344994": [
+    {
+      "collection": "services",
+      "pos": 1
+    }
+  ],
+  "sábado": [
+    {
+      "collection": "services",
+      "pos": 1
+    }
+  ],
+  "08": [
+    {
+      "collection": "services",
+      "pos": 1
+    }
+  ],
+  "18": [
+    {
+      "collection": "services",
+      "pos": 1
+    }
+  ],
+  "33": [
+    {
+      "collection": "services",
+      "pos": 1
+    }
+  ],
+  "1200": [
+    {
+      "collection": "services",
+      "pos": 1
+    }
+  ],
+  "3000": [
+    {
+      "collection": "services",
+      "pos": 1
+    }
+  ],
+  "atencion": [
+    {
+      "collection": "services",
+      "pos": 1
+    }
+  ],
+  "ventana": [
+    {
+      "collection": "services",
+      "pos": 2
+    }
+  ],
+  "única": [
+    {
+      "collection": "services",
+      "pos": 2
+    }
+  ],
+  "empresariales": [
+    {
+      "collection": "services",
+      "pos": 2
+    }
+  ],
+  "economía": [
+    {
+      "collection": "services",
+      "pos": 2
+    }
+  ],
+  "680201": [
+    {
+      "collection": "services",
+      "pos": 2
+    }
+  ],
+  "303921": [
+    {
+      "collection": "services",
+      "pos": 2
+    }
+  ],
+  "16": [
+    {
+      "collection": "services",
+      "pos": 2
+    }
+  ],
+  "81": [
+    {
+      "collection": "services",
+      "pos": 2
+    }
+  ],
+  "5102": [
+    {
+      "collection": "services",
+      "pos": 2
+    }
+  ],
+  "7000": [
+    {
+      "collection": "services",
+      "pos": 2
+    }
+  ],
+  "nl": [
+    {
+      "collection": "services",
+      "pos": 2
+    }
+  ],
+  "vut": [
+    {
+      "collection": "services",
+      "pos": 2
+    }
+  ],
+  "bal": [
+    {
+      "collection": "ballots",
+      "pos": 0
+    },
+    {
+      "collection": "ballots",
+      "pos": 1
+    }
+  ],
+  "pregunta": [
+    {
+      "collection": "ballots",
+      "pos": 0
+    },
+    {
+      "collection": "ballots",
+      "pos": 1
+    }
+  ],
+  "fondo": [
+    {
+      "collection": "ballots",
+      "pos": 0
+    }
+  ],
+  "verde": [
+    {
+      "collection": "ballots",
+      "pos": 0
+    }
+  ],
+  "metropolitano": [
+    {
+      "collection": "ballots",
+      "pos": 0
+    }
+  ],
+  "propone": [
+    {
+      "collection": "ballots",
+      "pos": 0
+    }
+  ],
+  "destinar": [
+    {
+      "collection": "ballots",
+      "pos": 0
+    }
+  ],
+  "municipal": [
+    {
+      "collection": "ballots",
+      "pos": 0
+    }
+  ],
+  "áreas": [
+    {
+      "collection": "ballots",
+      "pos": 0
+    }
+  ],
+  "verdes": [
+    {
+      "collection": "ballots",
+      "pos": 0
+    }
+  ],
+  "corredores": [
+    {
+      "collection": "ballots",
+      "pos": 0
+    }
+  ],
+  "bioclimáticos": [
+    {
+      "collection": "ballots",
+      "pos": 0
+    }
+  ],
+  "mejora": [
+    {
+      "collection": "ballots",
+      "pos": 0
+    }
+  ],
+  "calidad": [
+    {
+      "collection": "ballots",
+      "pos": 0
+    }
+  ],
+  "aire": [
+    {
+      "collection": "ballots",
+      "pos": 0
+    }
+  ],
+  "reduce": [
+    {
+      "collection": "ballots",
+      "pos": 0
+    }
+  ],
+  "islas": [
+    {
+      "collection": "ballots",
+      "pos": 0
+    }
+  ],
+  "calor": [
+    {
+      "collection": "ballots",
+      "pos": 0
+    }
+  ],
+  "colonias": [
+    {
+      "collection": "ballots",
+      "pos": 0
+    }
+  ],
+  "prioritarias": [
+    {
+      "collection": "ballots",
+      "pos": 0
+    }
+  ],
+  "instituto": [
+    {
+      "collection": "ballots",
+      "pos": 0
+    }
+  ],
+  "planeación": [
+    {
+      "collection": "ballots",
+      "pos": 0
+    }
+  ],
+  "ambiental": [
+    {
+      "collection": "ballots",
+      "pos": 0
+    }
+  ],
+  "local": [
+    {
+      "collection": "ballots",
+      "pos": 0
+    },
+    {
+      "collection": "notifications",
+      "pos": 0
+    }
+  ],
+  "puedes": [
+    {
+      "collection": "ballots",
+      "pos": 0
+    }
+  ],
+  "plataforma": [
+    {
+      "collection": "ballots",
+      "pos": 0
+    }
+  ],
+  "digital": [
+    {
+      "collection": "ballots",
+      "pos": 0
+    }
+  ],
+  "módulos": [
+    {
+      "collection": "ballots",
+      "pos": 0
+    }
+  ],
+  "ayuntamiento": [
+    {
+      "collection": "ballots",
+      "pos": 0
+    }
+  ],
+  "al": [
+    {
+      "collection": "ballots",
+      "pos": 0
+    }
+  ],
+  "15": [
+    {
+      "collection": "ballots",
+      "pos": 0
+    },
+    {
+      "collection": "ballots",
+      "pos": 1
+    }
+  ],
+  "diciembre": [
+    {
+      "collection": "ballots",
+      "pos": 0
+    }
+  ],
+  "boletas": [
+    {
+      "collection": "ballots",
+      "pos": 0
+    }
+  ],
+  "medio": [
+    {
+      "collection": "ballots",
+      "pos": 0
+    }
+  ],
+  "ambiente": [
+    {
+      "collection": "ballots",
+      "pos": 0
+    }
+  ],
+  "participación": [
+    {
+      "collection": "ballots",
+      "pos": 0
+    },
+    {
+      "collection": "notifications",
+      "pos": 2
+    }
+  ],
+  "corredor": [
+    {
+      "collection": "ballots",
+      "pos": 1
+    }
+  ],
+  "seguro": [
+    {
+      "collection": "ballots",
+      "pos": 1
+    }
+  ],
+  "transporte": [
+    {
+      "collection": "ballots",
+      "pos": 1
+    }
+  ],
+  "nocturno": [
+    {
+      "collection": "ballots",
+      "pos": 1
+    }
+  ],
+  "busca": [
+    {
+      "collection": "ballots",
+      "pos": 1
+    }
+  ],
+  "financiar": [
+    {
+      "collection": "ballots",
+      "pos": 1
+    }
+  ],
+  "rutas": [
+    {
+      "collection": "ballots",
+      "pos": 1
+    }
+  ],
+  "nocturnas": [
+    {
+      "collection": "ballots",
+      "pos": 1
+    }
+  ],
+  "iluminación": [
+    {
+      "collection": "ballots",
+      "pos": 1
+    }
+  ],
+  "vigilancia": [
+    {
+      "collection": "ballots",
+      "pos": 1
+    }
+  ],
+  "comunitaria": [
+    {
+      "collection": "ballots",
+      "pos": 1
+    }
+  ],
+  "ofrece": [
+    {
+      "collection": "ballots",
+      "pos": 1
+    }
+  ],
+  "alternativas": [
+    {
+      "collection": "ballots",
+      "pos": 1
+    }
+  ],
+  "seguras": [
+    {
+      "collection": "ballots",
+      "pos": 1
+    }
+  ],
+  "personas": [
+    {
+      "collection": "ballots",
+      "pos": 1
+    }
+  ],
+  "trabajadoras": [
+    {
+      "collection": "ballots",
+      "pos": 1
+    }
+  ],
+  "estudiantes": [
+    {
+      "collection": "ballots",
+      "pos": 1
+    }
+  ],
+  "secretaría": [
+    {
+      "collection": "ballots",
+      "pos": 1
+    }
+  ],
+  "alianza": [
+    {
+      "collection": "ballots",
+      "pos": 1
+    }
+  ],
+  "colectivos": [
+    {
+      "collection": "ballots",
+      "pos": 1
+    }
+  ],
+  "barriales": [
+    {
+      "collection": "ballots",
+      "pos": 1
+    }
+  ],
+  "respuesta": [
+    {
+      "collection": "ballots",
+      "pos": 1
+    }
+  ],
+  "boleta": [
+    {
+      "collection": "ballots",
+      "pos": 1
+    },
+    {
+      "collection": "notifications",
+      "pos": 2
+    }
+  ],
+  "impresa": [
+    {
+      "collection": "ballots",
+      "pos": 1
+    }
+  ],
+  "día": [
+    {
+      "collection": "ballots",
+      "pos": 1
+    }
+  ],
+  "elección": [
+    {
+      "collection": "ballots",
+      "pos": 1
+    }
+  ],
+  "participa": [
+    {
+      "collection": "ballots",
+      "pos": 1
+    }
+  ],
+  "not": [
+    {
+      "collection": "notifications",
+      "pos": 0
+    },
+    {
+      "collection": "notifications",
+      "pos": 1
+    },
+    {
+      "collection": "notifications",
+      "pos": 2
+    }
+  ],
+  "normativa": [
+    {
+      "collection": "notifications",
+      "pos": 0
+    }
+  ],
+  "actualización": [
+    {
+      "collection": "notifications",
+      "pos": 0
+    }
+  ],
+  "reglamento": [
+    {
+      "collection": "notifications",
+      "pos": 0
+    }
+  ],
+  "congreso": [
+    {
+      "collection": "notifications",
+      "pos": 0
+    }
+  ],
+  "aprobó": [
+    {
+      "collection": "notifications",
+      "pos": 0
+    }
+  ],
+  "nuevas": [
+    {
+      "collection": "notifications",
+      "pos": 0
+    }
+  ],
+  "reglas": [
+    {
+      "collection": "notifications",
+      "pos": 0
+    }
+  ],
+  "ciclovías": [
+    {
+      "collection": "notifications",
+      "pos": 0
+    }
+  ],
+  "temporales": [
+    {
+      "collection": "notifications",
+      "pos": 0
+    }
+  ],
+  "inmediata": [
+    {
+      "collection": "notifications",
+      "pos": 0
+    }
+  ],
+  "evento": [
+    {
+      "collection": "notifications",
+      "pos": 1
+    }
+  ],
+  "agregó": [
+    {
+      "collection": "notifications",
+      "pos": 1
+    }
+  ],
+  "alcaldía": [
+    {
+      "collection": "notifications",
+      "pos": 1
+    }
+  ],
+  "anunció": [
+    {
+      "collection": "notifications",
+      "pos": 1
+    }
+  ],
+  "extraordinario": [
+    {
+      "collection": "notifications",
+      "pos": 1
+    }
+  ],
+  "diaria": [
+    {
+      "collection": "notifications",
+      "pos": 1
+    }
+  ],
+  "interes": [
+    {
+      "collection": "notifications",
+      "pos": 2
+    }
+  ],
+  "guía": [
+    {
+      "collection": "notifications",
+      "pos": 2
+    }
+  ],
+  "rápida": [
+    {
+      "collection": "notifications",
+      "pos": 2
+    }
+  ],
+  "preguntas": [
+    {
+      "collection": "notifications",
+      "pos": 2
+    }
+  ],
+  "revisa": [
+    {
+      "collection": "notifications",
+      "pos": 2
+    }
+  ],
+  "pasos": [
+    {
+      "collection": "notifications",
+      "pos": 2
+    }
+  ],
+  "documentos": [
+    {
+      "collection": "notifications",
+      "pos": 2
+    }
+  ],
+  "necesarios": [
+    {
+      "collection": "notifications",
+      "pos": 2
+    }
+  ],
+  "responder": [
+    {
+      "collection": "notifications",
+      "pos": 2
+    }
+  ],
+  "locales": [
+    {
+      "collection": "notifications",
+      "pos": 2
+    }
+  ],
+  "semanal": [
+    {
+      "collection": "notifications",
+      "pos": 2
+    }
+  ]
+}

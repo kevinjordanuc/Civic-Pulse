@@ -1,0 +1,8 @@
+streamlit==1.39.0
+pandas==2.2.3
+pydeck==0.9.1
+python-dotenv==1.0.1
+gTTS==2.5.3
+semantic-kernel==1.13.0
+azure-identity==1.17.1
+azure-ai-inference==1.0.0b5

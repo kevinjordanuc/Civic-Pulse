@@ -1,0 +1,58 @@
+[
+  {
+    "id": "ev-001",
+    "titulo": "Cabildo abierto sobre movilidad",
+    "descripcion": "Sesión para discutir el plan integral de movilidad sostenible del municipio.",
+    "lat": 19.432608,
+    "lon": -99.133209,
+    "municipio": "Ciudad de México",
+    "estado": "CDMX",
+    "categoria": "movilidad",
+    "inicio": "2025-11-22T10:00:00",
+    "fin": "2025-11-22T12:30:00",
+    "direccion": "Av. Plaza de la Constitución s/n, Centro Histórico",
+    "fuente": "https://www.cdmx.gob.mx/eventos"
+  },
+  {
+    "id": "ev-002",
+    "titulo": "Feria de servicios de salud comunitarios",
+    "descripcion": "Jornada gratuita de vacunación, chequeo general y orientación nutricional.",
+    "lat": 20.659699,
+    "lon": -103.349609,
+    "municipio": "Guadalajara",
+    "estado": "Jalisco",
+    "categoria": "salud",
+    "inicio": "2025-11-25T09:00:00",
+    "fin": "2025-11-25T16:00:00",
+    "direccion": "Parque Revolución, Col. Americana",
+    "fuente": "https://www.jalisco.gob.mx/servicios"
+  },
+  {
+    "id": "ev-003",
+    "titulo": "Taller educativo sobre presupuesto participativo",
+    "descripcion": "Explicación de los proyectos propuestos y acompañamiento para votar de forma informada.",
+    "lat": 25.686614,
+    "lon": -100.316113,
+    "municipio": "Monterrey",
+    "estado": "Nuevo León",
+    "categoria": "educacion",
+    "inicio": "2025-11-28T17:00:00",
+    "fin": "2025-11-28T19:00:00",
+    "direccion": "Centro Cultural Barrio Antiguo",
+    "fuente": "https://monterrey.gob.mx"
+  },
+  {
+    "id": "ev-004",
+    "titulo": "Jornada de seguridad vial para peatones",
+    "descripcion": "Demostraciones prácticas y materiales lúdicos para familias.",
+    "lat": 19.041297,
+    "lon": -98.2062,
+    "municipio": "Puebla",
+    "estado": "Puebla",
+    "categoria": "seguridad",
+    "inicio": "2025-11-24T11:00:00",
+    "fin": "2025-11-24T14:00:00",
+    "direccion": "Zócalo de Puebla",
+    "fuente": "https://puebla.gob.mx"
+  }
+]

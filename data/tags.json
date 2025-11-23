@@ -1,0 +1,57 @@
+[
+  {
+    "value": "movilidad",
+    "label": "Movilidad",
+    "tipo": "oficial",
+    "popularidad": 128
+  },
+  {
+    "value": "salud",
+    "label": "Salud",
+    "tipo": "oficial",
+    "popularidad": 97
+  },
+  {
+    "value": "educacion",
+    "label": "Educación",
+    "tipo": "oficial",
+    "popularidad": 73
+  },
+  {
+    "value": "seguridad",
+    "label": "Seguridad",
+    "tipo": "oficial",
+    "popularidad": 84
+  },
+  {
+    "value": "participacion",
+    "label": "Participación",
+    "tipo": "oficial",
+    "popularidad": 65
+  },
+  {
+    "value": "reciclaje",
+    "label": "Reciclaje barrial",
+    "tipo": "ciudadana",
+    "popularidad": 22,
+    "estado": "aprobada"
+  },
+  {
+    "value": "huertos",
+    "label": "Huertos comunitarios",
+    "tipo": "ciudadana",
+    "popularidad": 18,
+    "estado": "pendiente"
+  },
+  {
+    "value": "ia",
+    "label": "Ia",
+    "tipo": "ciudadana",
+    "estado": "pendiente",
+    "popularidad": 2,
+    "creado_por": "118a36bf-261d-4e2e-9cb9-cc4e5c478969",
+    "seguidores": [
+      "118a36bf-261d-4e2e-9cb9-cc4e5c478969"
+    ]
+  }
+]

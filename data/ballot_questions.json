@@ -1,0 +1,22 @@
+[
+  {
+    "id": "bal-001",
+    "titulo": "Pregunta 3: Fondo verde metropolitano",
+    "resumen": "Se propone destinar el 2% del presupuesto municipal a proyectos de áreas verdes y corredores bioclimáticos.",
+    "impacto": "Mejora la calidad del aire y reduce islas de calor en colonias prioritarias.",
+    "quien_promueve": "Instituto de Planeación Ambiental local.",
+    "como_participar": "Puedes votar en la plataforma digital o en módulos del ayuntamiento del 1 al 15 de diciembre.",
+    "fuente": "https://boletas.cdmx.gob.mx",
+    "temas": ["medio ambiente", "participación"]
+  },
+  {
+    "id": "bal-002",
+    "titulo": "Pregunta 7: Corredor seguro para transporte nocturno",
+    "resumen": "Busca financiar 15 rutas nocturnas con iluminación y vigilancia comunitaria.",
+    "impacto": "Ofrece alternativas seguras para personas trabajadoras y estudiantes.",
+    "quien_promueve": "Secretaría de Movilidad en alianza con colectivos barriales.",
+    "como_participar": "Respuesta en boleta impresa el día de la elección.",
+    "fuente": "https://participa.guadalajara.mx",
+    "temas": ["movilidad", "seguridad"]
+  }
+]
