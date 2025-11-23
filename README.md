@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # CivicAI Hub
 
 MVP construido con Streamlit para el Hackathon Innovation Challenge 2025. El objetivo es brindar información cívica oficial, personalizada e inclusiva mediante chat neutral, mapa interactivo y foros moderados.
@@ -87,3 +88,7 @@ streamlit run app.py
 - [Semantic Kernel Python](https://github.com/microsoft/semantic-kernel)
 - [Microsoft Foundry (Azure AI) Documentation](https://learn.microsoft.com/azure/ai-services/)
 - [Azure Content Safety](https://learn.microsoft.com/azure/ai-services/content-safety/) 
+=======
+# Civic-Pulse
+CivicPulse is a multi-agent civic intelligence platform built with Azure AI. It adapts to the user’s environment and needs, ingesting public data, answering queries, providing educational explanations, delivering personalized notifications, and applying safety moderation for informed community engagement.
+>>>>>>> 8ef57b581d91e3f089dcf44b934253e44b72efdb
