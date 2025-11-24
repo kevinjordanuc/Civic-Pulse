@@ -3,10 +3,6 @@ import re
 from pathlib import Path
 from typing import Dict, Any, List
 
-# Importa tus utilidades actuales para cargar catálogos
-# Asegúrate de que src.data_loader exista en tu proyecto
-from src import data_loader
-
 # Configuración de rutas
 BASE_DIR = Path(__file__).resolve().parents[2]
 DATA_DIR = BASE_DIR / "data"
@@ -18,6 +14,26 @@ _STOPWORDS = {
     "de", "la", "el", "y", "a", "en", "los", "las", 
     "del", "que", "con", "para", "por", "se", "un", "una"
 }
+
+def _load_json_file(filename: str) -> List[Dict[str, Any]]:
+    """Carga un archivo JSON de la carpeta de datos."""
+    file_path = DATA_DIR / filename
+    if not file_path.exists():
+        return []
+    with file_path.open("r", encoding="utf-8") as fh:
+        return json.load(fh)
+
+def load_events() -> List[Dict[str, Any]]:
+    return _load_json_file("events.json")
+
+def load_services() -> List[Dict[str, Any]]:
+    return _load_json_file("services.json")
+
+def load_ballot_questions() -> List[Dict[str, Any]]:
+    return _load_json_file("ballot_questions.json")
+
+def load_notifications() -> List[Dict[str, Any]]:
+    return _load_json_file("notifications.json")
 
 def _tokenize(text: str) -> List[str]:
     """
@@ -52,33 +68,18 @@ def _normalize_item(item: Dict[str, Any]) -> Dict[str, Any]:
 def run_ingestion() -> Dict[str, Any]:
     """
     Ejecuta ingesta local:
-    - carga catálogos desde src.data_loader
+    - carga catálogos directamente
     - normaliza registros
     - guarda ingested_data.json
     - construye índice invertido simple y lo guarda en index.json
     """
     DATA_DIR.mkdir(parents=True, exist_ok=True)
 
-    # 1) Cargar datos desde data_loader (Manejo de errores por si fallan fuentes individuales)
-    try:
-        events = data_loader.load_events()
-    except Exception:
-        events = []
-        
-    try:
-        services = data_loader.load_services()
-    except Exception:
-        services = []
-        
-    try:
-        ballots = data_loader.load_ballot_questions()
-    except Exception:
-        ballots = []
-        
-    try:
-        notifications = data_loader.load_notifications()
-    except Exception:
-        notifications = []
+    # 1) Cargar datos
+    events = load_events()
+    services = load_services()
+    ballots = load_ballot_questions()
+    notifications = load_notifications()
 
     payload = {
         "events": [_normalize_item(i) for i in events],

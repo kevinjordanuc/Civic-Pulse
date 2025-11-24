@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 # Civic-Pulse (CivicAI Hub)
+=======
+# CivicAI Hub
+>>>>>>> 855c5cef8fcb43277c494edcaea0fc90c0f1695e
 
 **Civic-Pulse** es una plataforma de inteligencia cívica **multi-agente** construida con Azure AI. Se adapta al entorno y necesidades del usuario, ingiriendo datos públicos, respondiendo consultas, brindando explicaciones educativas, entregando notificaciones personalizadas y aplicando moderación de seguridad para una participación comunitaria informada.
 

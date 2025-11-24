@@ -9,16 +9,10 @@ import pandas as pd
 import pydeck as pdk
 import streamlit as st
 
-from src import data_loader, profile_store, tag_service, forum_store
+from src import profile_store, tag_service, forum_store
 from src.accessibility import SUPPORTED_LANGS, translate_text, synthesize_audio
-# from src.chat_engine import CivicChatEngine  # Reemplazado por Orchestrator
-from src.notifications import filter_notifications
-from src.moderation import is_safe_text, azure_content_safety_placeholder
-
-BASE_DIR = Path(__file__).resolve().parent
-
-st.set_page_config(page_title="CivicAI Hub", layout="wide", page_icon="🗳️")
-
+from src.agents.ingestion_agent import load_events, load_services, load_ballot_questions, load_notifications
+from src.agents.notifications_agent import NotificationAgent
 DEFAULT_PROFILE: Dict[str, Any] = {
     "correo": "",
     "municipio": "Ciudad de México",
@@ -51,10 +45,10 @@ def _init_state() -> None:
 _init_state()
 
 CATALOGOS = {
-    "events": data_loader.load_events(),
-    "services": data_loader.load_services(),
-    "ballots": data_loader.load_ballot_questions(),
-    "notifications": data_loader.load_notifications(),
+    "events": load_events(),
+    "services": load_services(),
+    "ballots": load_ballot_questions(),
+    "notifications": load_notifications(),
 }
 
 from src.agents.orchestrator import Orchestrator
@@ -231,7 +225,7 @@ def _chat_section(perfil: Dict[str, Any]) -> None:
 
 def _notification_section(perfil: Dict[str, Any]) -> None:
     st.subheader("Notificaciones personalizadas")
-    coincidencias = filter_notifications(
+    coincidencias = NotificationAgent.filter_notifications(
         CATALOGOS["notifications"],
         municipio=perfil["municipio"],
         intereses=perfil["intereses"],
@@ -260,11 +254,11 @@ def _render_forum_creator(perfil: Dict[str, Any]) -> None:
             if not titulo or not descripcion:
                 st.error("Completa título y descripción.")
                 return
-            moderacion = is_safe_text(f"{titulo} {descripcion}")
-            if moderacion["action"] == "block":
-                st.error(f"Moderación: {moderacion['detail']}")
+            moderacion = ORQUESTADOR.moderator.evaluate(f"{titulo} {descripcion}")
+            if not moderacion["allowed"]:
+                st.error(f"Moderación: {moderacion['message']}")
                 return
-            st.info(f"Moderación: {moderacion['detail']}")
+            st.info("Contenido validado por el agente de moderación.")
             forum_store.create_forum(titulo, descripcion, categoria, autor=user["user_id"])
             st.success("Foro enviado a moderación. Se publicará automáticamente al aprobarse.")
             st.experimental_rerun()
@@ -282,9 +276,9 @@ def _render_event_forums(perfil: Dict[str, Any]) -> None:
         st.write(f"**{comentario['autor']}**: {comentario['texto']}")
     nuevo = st.text_area("Participa con respeto y sin recomendaciones políticas", key=f"event-comment-{evento}")
     if st.button("Publicar comentario", key=f"event-btn-{evento}") and nuevo:
-        moderacion = is_safe_text(nuevo)
-        if moderacion["action"] == "block":
-            st.error("Tu mensaje contiene palabras restringidas. Ajusta el texto e inténtalo nuevamente.")
+        moderacion = ORQUESTADOR.moderator.evaluate(nuevo)
+        if not moderacion["allowed"]:
+            st.error(moderacion["message"])
         else:
             comentarios.append({"autor": perfil.get("correo") or "Invitado", "texto": nuevo})
             st.success("Comentario publicado. Azure Content Safety puede reforzar esta validación en la nube.")
@@ -311,9 +305,9 @@ def _render_user_forums(perfil: Dict[str, Any]) -> None:
             continue
         nuevo = st.text_area("Agrega tu comentario", key=f"foro-text-{foro['id']}")
         if st.button("Comentar", key=f"foro-btn-{foro['id']}") and nuevo:
-            moderacion = is_safe_text(nuevo)
-            if moderacion["action"] == "block":
-                st.error("El comentario no pasó la moderación local.")
+            moderacion = ORQUESTADOR.moderator.evaluate(nuevo)
+            if not moderacion["allowed"]:
+                st.error(moderacion["message"])
             else:
                 forum_store.add_comment(foro["id"], autor=perfil.get("correo") or user["email"], texto=nuevo)
                 st.success("Comentario enviado.")
