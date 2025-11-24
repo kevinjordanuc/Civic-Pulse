@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-# Civic-Pulse (CivicAI Hub)
-=======
-# CivicAI Hub
->>>>>>> 855c5cef8fcb43277c494edcaea0fc90c0f1695e
 
 **Civic-Pulse** es una plataforma de inteligencia cívica **multi-agente** construida con Azure AI. Se adapta al entorno y necesidades del usuario, ingiriendo datos públicos, respondiendo consultas, brindando explicaciones educativas, entregando notificaciones personalizadas y aplicando moderación de seguridad para una participación comunitaria informada.
 
@@ -46,14 +41,10 @@ CivicAIHub/
     │   ├── rag_agent.py        # Agente de búsqueda de información
     │   ├── educator_agent.py   # Agente de explicación didáctica
     │   ├── moderation_agent.py # Lógica de moderación
-    │   └── notifications_agent.py
+    │   ├── notifications_agent.py # Gestión de notificaciones
+    │   └── ingestion_agent.py  # Carga de datos
     ├── accessibility.py    # Integración Azure Speech/Translator
-    ├── azure_integration.py# Cliente base de Semantic Kernel
-    ├── chat_engine.py      # (Legacy/Wrapper) Conexión con UI
-    ├── data_loader.py      # Carga de datos
     ├── forum_store.py      # Lógica de foros
-    ├── moderation.py       # Utilidades de seguridad
-    ├── notifications.py    # Utilidades de notificación
     ├── profile_store.py    # Gestión de usuarios
     └── tag_service.py      # Gestión de intereses
 ```
@@ -69,7 +60,7 @@ graph TD
     E -->|Dato oficial| G[RAG Agent]
     E -->|Novedades| H[Notification Agent]
     F & G & H -->|Respuesta Generada| I[Respuesta Final]
-
+```
 ## Requerimientos previos
 
 - Python 3.10+
@@ -107,13 +98,14 @@ Para que los agentes de IA funcionen, debes configurar tus credenciales en un ar
 
 
 
+| Componente | Agente / Archivo | Descripción |
 | --- | --- | --- |
-| Chat Cívico | `src/azure_integration.py` | Instala `semantic-kernel` y `agent-framework-azure-ai --pre`, registra el deployment de Microsoft Foundry, reemplaza los stubs y llena `.env`. |
-| Datos oficiales | `src/chat_engine.py` | Integra Azure AI Search o Cosmos DB para traer recortes oficiales en `build_context`. |
-| Mapa interactivo | `app.py` (`_render_map`) | Sustituye `pydeck` por Azure Maps Web Control o Map Control SDK usando `AZURE_MAPS_CLIENT_ID`. |
-| Notificaciones | `src/notifications.py` | Conecta los resultados filtrados con Azure Communication Services (correo/SMS) o Azure Event Grid. |
-| Foros | `src/moderation.py` | Llama a Azure AI Content Safety y usa Azure Web PubSub/SignalR para actualizaciones en vivo. |
-| Accesibilidad | `src/accessibility.py` | Cambia `gTTS` por Azure AI Speech y Azure Translator para cobertura completa de idiomas. |
+| Chat Cívico | `Orchestrator` + `EducatorAgent` | Coordina la respuesta usando Semantic Kernel. `EducatorAgent` explica conceptos. |
+| Datos oficiales | `RAGAgent` | Busca información en documentos oficiales (simulado o Azure Search). |
+| Mapa interactivo | `app.py` + `IngestionAgent` | `IngestionAgent` carga eventos georreferenciados. |
+| Notificaciones | `NotificationAgent` | Filtra alertas relevantes y conecta con Azure Communication Services. |
+| Foros | `ModerationAgent` | Evalúa toxicidad con Azure AI Content Safety antes de publicar. |
+| Accesibilidad | `accessibility.py` | Servicios de Azure Speech y Translator. |
 
 ## Arquitectura Multi-Agente
 
