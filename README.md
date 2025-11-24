@@ -1,15 +1,31 @@
-<<<<<<< HEAD
-# CivicAI Hub
+# Civic-Pulse (CivicAI Hub)
 
-MVP construido con Streamlit para el Hackathon Innovation Challenge 2025. El objetivo es brindar información cívica oficial, personalizada e inclusiva mediante chat neutral, mapa interactivo y foros moderados.
+**Civic-Pulse** es una plataforma de inteligencia cívica **multi-agente** construida con Azure AI. Se adapta al entorno y necesidades del usuario, ingiriendo datos públicos, respondiendo consultas, brindando explicaciones educativas, entregando notificaciones personalizadas y aplicando moderación de seguridad para una participación comunitaria informada.
+
+Este MVP fue construido con Streamlit para el Hackathon Innovation Challenge 2025.
+
+## 🎯 El Problema
+A pesar de que la información pública existe, es difícil de consumir. Los ciudadanos enfrentan barreras de lenguaje técnico, datos dispersos y canales de comunicación estáticos que no responden dudas personales. Esta fricción genera desinformación, apatía y desconexión con la vida comunitaria local.
+
+## 💡 La Solución
+**Civic-Pulse** ues una plataforma de inteligencia cívica multi-agente impulsada por Azure AI. No solo muestra datos; "traduce" la burocracia a un lenguaje ciudadano mediante un chat educativo neutral, personaliza alertas según los intereses del vecino y protege el tejido social mediante foros con moderación automática de seguridad.
 
 ## Características principales
 
-- **Ingreso y perfil** con preferencias de idioma, intereses, ubicación y opciones de accesibilidad (tamaño de texto, traducción, lectura en voz alta).
-- **Chat Cívico** orquestado a través de `CivicChatEngine`, preparado para Semantic Kernel y Microsoft Foundry (Azure AI). Incluye respuesta local de respaldo para demostraciones sin conexión.
-- **Mapa interactivo** basado en `pydeck` con eventos y servicios públicos relevantes para la ubicación del ciudadano.
-- **Notificaciones personalizadas** filtradas por municipio, intereses y frecuencia deseada.
-- **Foros moderados** con reglas básicas y ganchos para conectarse a Azure AI Content Safety.
+- **Ingreso y perfil persistente**: Preferencias de idioma, intereses, ubicación y opciones de accesibilidad (tamaño de texto, traducción, lectura en voz alta).
+- **Chat Cívico Inteligente**: Orquestado por **Semantic Kernel** y **Azure OpenAI**. Responde preguntas sobre eventos y boletas electorales con contexto local y neutralidad garantizada.
+- **Mapa interactivo**: Visualización de eventos y servicios públicos relevantes para la ubicación del ciudadano.
+- **Notificaciones personalizadas**: Sistema de alertas filtradas por municipio, intereses y frecuencia deseada.
+- **Foros moderados por IA**: Espacios de diálogo protegidos por **Azure AI Content Safety**, que detecta y bloquea automáticamente discursos de odio o violencia.
+- **Accesibilidad Universal**: Integración con **Azure AI Speech** (texto a voz neural) y **Azure Translator** para romper barreras de idioma y lectura.
+
+## 🧪 Casos de Uso (Demo)
+
+Para probar las capacidades del sistema, intenta estas interacciones en el chat:
+
+1.  **Educación Cívica**: *"¿Qué significa la pregunta 1 de la boleta electoral?"* (El agente buscará en la data oficial y explicará términos complejos).
+2.  **Información Hiperlocal**: *"¿Hay algún evento de reciclaje cerca de mi municipio?"* (El orquestador filtrará eventos por tu ubicación en el perfil).
+3.  **Moderación de Seguridad**: Intenta escribir un mensaje agresivo en el foro. (El agente `ModerationAgent` interceptará el mensaje antes de publicarlo).
 
 ## Estructura del repositorio
 
@@ -18,16 +34,37 @@ CivicAIHub/
 ├── app.py                  # App Streamlit principal
 ├── requirements.txt        # Dependencias
 ├── README.md
-├── config/.env.example     # Variables sugeridas para conectar a Microsoft Foundry / Azure
-├── data/                   # Catálogos de ejemplo (eventos, servicios, boletas, alertas)
+├── config/.env.example     # Plantilla de variables de entorno
+├── data/                   # Catálogos locales (JSONs)
 └── src/
-    ├── accessibility.py    # Traducción simplificada y TTS (stub a reemplazar por Azure Speech)
-    ├── azure_integration.py# Cliente Semantic Kernel + AzureAIInference
-    ├── chat_engine.py      # Orquestador del asistente neutral
-    ├── data_loader.py      # Utilidades para leer catálogos
-    ├── moderation.py       # Reglas básicas + placeholder de Azure Content Safety
-    └── notifications.py    # Filtro para alertas personalizadas
+    ├── agents/                 # 🧠 Cerebro del sistema Multi-Agente
+    │   ├── orchestrator.py     # Coordinador principal de peticiones
+    │   ├── rag_agent.py        # Agente de búsqueda de información
+    │   ├── educator_agent.py   # Agente de explicación didáctica
+    │   ├── moderation_agent.py # Lógica de moderación
+    │   └── notifications_agent.py
+    ├── accessibility.py    # Integración Azure Speech/Translator
+    ├── azure_integration.py# Cliente base de Semantic Kernel
+    ├── chat_engine.py      # (Legacy/Wrapper) Conexión con UI
+    ├── data_loader.py      # Carga de datos
+    ├── forum_store.py      # Lógica de foros
+    ├── moderation.py       # Utilidades de seguridad
+    ├── notifications.py    # Utilidades de notificación
+    ├── profile_store.py    # Gestión de usuarios
+    └── tag_service.py      # Gestión de intereses
 ```
+### Flujo de Orquestación
+
+```mermaid
+graph TD
+    A[Usuario] -->|Consulta| B(Orquestador)
+    B -->|Análisis de Seguridad| C{Azure Content Safety}
+    C -->|Inseguro| D[Bloqueo / Advertencia]
+    C -->|Seguro| E{Router de Intención}
+    E -->|Duda compleja| F[Educator Agent]
+    E -->|Dato oficial| G[RAG Agent]
+    E -->|Novedades| H[Notification Agent]
+    F & G & H -->|Respuesta Generada| I[Respuesta Final]
 
 ## Requerimientos previos
 
@@ -43,23 +80,29 @@ CivicAIHub/
 
 ```bash
 python -m venv .venv
+# Windows:
 .venv\Scripts\activate
+# Mac/Linux:
+# source .venv/bin/activate
+
 pip install -r requirements.txt
 streamlit run app.py
 ```
 
-## Configurar credenciales de Azure / Microsoft Foundry
+## Configuración (Obligatoria)
 
-1. Copia `config/.env.example` a `.env` y completa los valores:
-   - `AZURE_OPENAI_ENDPOINT`, `AZURE_OPENAI_DEPLOYMENT`, `AZURE_OPENAI_API_VERSION` (usa identidad administrada cuando despliegues en Azure App Service o Container Apps).
-   - `AZURE_AI_SEARCH_ENDPOINT` y `AZURE_AI_SEARCH_INDEX` para recuperar boletines indexados.
-   - `AZURE_MAPS_CLIENT_ID` para sustituir `pydeck` por Azure Maps.
-2. Configura una **Identidad Administrada** en el servicio donde hospedarás el MVP y asigna permisos mínimos (Cognitive Services Contributor, Search Index Data Reader, Maps Data Reader, etc.).
-3. (Opcional) Define `AZURE_TELEMETRY_CONNECTION` para enviar métricas a Application Insights.
+Para que los agentes de IA funcionen, debes configurar tus credenciales en un archivo `.env` (basado en `config/.env.example`):
 
-## Cómo conectar cada módulo a Azure
+1.  **Chat**: `AZURE_OPENAI_ENDPOINT`, `AZURE_OPENAI_DEPLOYMENT`, `AZURE_OPENAI_API_VERSION` (o `AZURE_OPENAI_KEY` si no usas DefaultAzureCredential).
+2.  **Moderación**: `AZURE_CONTENT_SAFETY_ENDPOINT`, `AZURE_CONTENT_SAFETY_KEY`.
+3.  **Identidad Administrada**: `en el servicio donde hospedarás el MVP y asigna permisos mínimos (Cognitive Services Contributor, Search Index Data Reader, Maps Data Reader, etc.).`
+4.  **Accesibilidad**: `AZURE_SPEECH_KEY`, `AZURE_SPEECH_REGION`, `AZURE_TRANSLATOR_KEY`, `AZURE_TRANSLATOR_REGION`.
 
-| Módulo | Archivo | Paso siguiente |
+> **Nota**: Si no configuras estas variables, la aplicación funcionará en "modo local" con funcionalidades limitadas (respuestas predefinidas, sin moderación).
+
+
+
+
 | --- | --- | --- |
 | Chat Cívico | `src/azure_integration.py` | Instala `semantic-kernel` y `agent-framework-azure-ai --pre`, registra el deployment de Microsoft Foundry, reemplaza los stubs y llena `.env`. |
 | Datos oficiales | `src/chat_engine.py` | Integra Azure AI Search o Cosmos DB para traer recortes oficiales en `build_context`. |
@@ -67,6 +110,16 @@ streamlit run app.py
 | Notificaciones | `src/notifications.py` | Conecta los resultados filtrados con Azure Communication Services (correo/SMS) o Azure Event Grid. |
 | Foros | `src/moderation.py` | Llama a Azure AI Content Safety y usa Azure Web PubSub/SignalR para actualizaciones en vivo. |
 | Accesibilidad | `src/accessibility.py` | Cambia `gTTS` por Azure AI Speech y Azure Translator para cobertura completa de idiomas. |
+
+## Arquitectura Multi-Agente
+
+| Agente / Módulo | Estado | Tecnología Azure |
+| --- | --- | --- |
+| **Agente Conversacional** | ✅ Implementado | Semantic Kernel + Azure OpenAI |
+| **Agente de Moderación** | ✅ Implementado | Azure AI Content Safety |
+| **Agente de Accesibilidad** | ✅ Implementado | Azure AI Speech + Translator |
+| **Datos Oficiales** | ⚠️ Simulado (JSON) | (Próximo paso: Azure AI Search) |
+| **Mapa** | ⚠️ PyDeck | (Próximo paso: Azure Maps) |
 
 ## Buenas prácticas de seguridad
 
@@ -87,8 +140,4 @@ streamlit run app.py
 
 - [Semantic Kernel Python](https://github.com/microsoft/semantic-kernel)
 - [Microsoft Foundry (Azure AI) Documentation](https://learn.microsoft.com/azure/ai-services/)
-- [Azure Content Safety](https://learn.microsoft.com/azure/ai-services/content-safety/) 
-=======
-# Civic-Pulse
-CivicPulse is a multi-agent civic intelligence platform built with Azure AI. It adapts to the user’s environment and needs, ingesting public data, answering queries, providing educational explanations, delivering personalized notifications, and applying safety moderation for informed community engagement.
->>>>>>> 8ef57b581d91e3f089dcf44b934253e44b72efdb
+- [Azure Content Safety](https://learn.microsoft.com/azure/ai-services/content-safety/)

@@ -46,14 +46,19 @@ class AzureSemanticKernelClient:
         self.kernel: Optional[KernelType] = None
         if Kernel and AzureAIInferenceChatCompletion and DefaultAzureCredential:
             credential = DefaultAzureCredential(exclude_shared_token_cache_credential=True)
-            #connector = AzureAIInferenceChatCompletion(
-                #deployment_name=self.config.deployment,
-                #endpoint=self.config.endpoint,
-                #api_version=self.config.api_version,
-                #credential=credential,
-            #)
-            #self.kernel = Kernel()
-            #self.kernel.add_text_completion_service("azure-gpt", connector)
+            try:
+                # Intentamos conectar con Azure AI Inference (MaaS) o Azure OpenAI
+                # Si se prefiere Azure OpenAI nativo, cambiar a AzureChatCompletion
+                connector = AzureAIInferenceChatCompletion(
+                    ai_model_id=self.config.deployment,
+                    endpoint=self.config.endpoint,
+                    credential=credential,
+                )
+                self.kernel = Kernel()
+                self.kernel.add_service(connector)
+            except Exception as e:
+                print(f"Warning: No se pudo inicializar Azure AI Kernel: {e}")
+                self.kernel = None
 
     def summarize_context(self, piezas: List[Dict[str, Any]]) -> str:
         """Compacta registros para ahorrar tokens antes de llamar al modelo."""

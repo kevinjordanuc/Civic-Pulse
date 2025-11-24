@@ -8,8 +8,8 @@ from datetime import datetime
 
 ROOT = Path(__file__).resolve().parents[2]
 DATA_DIR = ROOT / "data"
-USERS_PATH = DATA_DIR / "users.json"
-EVENTS_PATH = DATA_DIR / "events_current.json"
+USERS_PATH = DATA_DIR / "profiles.json"
+EVENTS_PATH = DATA_DIR / "events.json"
 STATE_PATH = DATA_DIR / "notifications_state.json"
 
 # Optional: Azure Communication Services (ACS) placeholders
@@ -116,6 +116,42 @@ class NotificationAgent:
             return self.send_acs(message, user)
         # fallback
         return self.send_console(message, user)
+
+    def get_relevant_notifications(self, user_profile: Dict[str, Any]) -> str:
+        """
+        Devuelve un resumen de notificaciones relevantes para el usuario basado en su perfil.
+        """
+        self.refresh()
+        relevant_events = []
+        
+        # Usamos lógica similar a filter_relevant_users pero centrada en el usuario actual
+        user_interests = set(user_profile.get("intereses", []))
+        user_lat = 0.0 # En un caso real, vendría del perfil o geolocalización actual
+        user_lon = 0.0
+        
+        # Intentar buscar coordenadas del usuario en la base de usuarios si existe match por correo/id
+        # Por simplicidad del MVP, asumimos que el perfil pasado ya tiene lo necesario o usamos defaults
+        
+        for event in self.events:
+            # Filtro por interés
+            if event.get("type") and event["type"] not in user_interests:
+                if user_interests: # Si el usuario tiene intereses definidos y no coinciden
+                    continue
+            
+            # Filtro por distancia (opcional, si tuviéramos coords en el perfil de sesión)
+            # Por ahora devolvemos todo lo que coincida en intereses
+            relevant_events.append(event)
+            
+        if not relevant_events:
+            return "No tienes notificaciones nuevas en este momento."
+            
+        # Construir respuesta
+        lines = ["Aquí tienes tus notificaciones recientes:"]
+        for ev in relevant_events[:3]: # Top 3
+            title = ev.get("title") or ev.get("event_id")
+            lines.append(f"- {title} ({ev.get('timestamp', '')})")
+            
+        return "\n".join(lines)
 
     def run_detection_and_notify(self) -> Dict[str, Any]:
         """

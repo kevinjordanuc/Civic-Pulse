@@ -11,7 +11,7 @@ import streamlit as st
 
 from src import data_loader, profile_store, tag_service, forum_store
 from src.accessibility import SUPPORTED_LANGS, translate_text, synthesize_audio
-from src.chat_engine import CivicChatEngine
+# from src.chat_engine import CivicChatEngine  # Reemplazado por Orchestrator
 from src.notifications import filter_notifications
 from src.moderation import is_safe_text, azure_content_safety_placeholder
 
@@ -57,7 +57,12 @@ CATALOGOS = {
     "notifications": data_loader.load_notifications(),
 }
 
-CHAT_ENGINE = CivicChatEngine(CATALOGOS)
+from src.agents.orchestrator import Orchestrator
+
+# ... (imports remain)
+
+# Inicializamos el Orquestador Multi-Agente
+ORQUESTADOR = Orchestrator()
 
 
 def _set_active_profile(profile: profile_store.Profile) -> None:
@@ -255,12 +260,11 @@ def _render_forum_creator(perfil: Dict[str, Any]) -> None:
             if not titulo or not descripcion:
                 st.error("Completa título y descripción.")
                 return
-            moderacion_local = is_safe_text(f"{titulo} {descripcion}")
-            if moderacion_local["action"] == "block":
-                st.error("Tu propuesta contiene palabras restringidas. Ajusta el texto.")
+            moderacion = is_safe_text(f"{titulo} {descripcion}")
+            if moderacion["action"] == "block":
+                st.error(f"Moderación: {moderacion['detail']}")
                 return
-            azure_resumen = azure_content_safety_placeholder(descripcion)
-            st.info(f"Azure Content Safety: {azure_resumen['detail']}")
+            st.info(f"Moderación: {moderacion['detail']}")
             forum_store.create_forum(titulo, descripcion, categoria, autor=user["user_id"])
             st.success("Foro enviado a moderación. Se publicará automáticamente al aprobarse.")
             st.experimental_rerun()

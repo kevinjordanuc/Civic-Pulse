@@ -18,9 +18,9 @@ class EducatorAgent:
 
     def __init__(self):
         # Detectamos si hay credenciales configuradas
-        self.azure_key = os.getenv("AZURE_OPENAI_KEY")
+        self.azure_key = os.getenv("AZURE_OPENAI_API_KEY")
         self.azure_endpoint = os.getenv("AZURE_OPENAI_ENDPOINT")
-        self.azure_model = os.getenv("AZURE_OPENAI_MODEL", "gpt-4o")
+        self.azure_model = os.getenv("AZURE_OPENAI_MODEL", "civicai-gpt1")
 
         self.use_real_llm = (
             SK_AVAILABLE and

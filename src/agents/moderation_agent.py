@@ -4,7 +4,7 @@ from typing import Dict, Any, Optional
 
 try:
     from azure.ai.contentsafety import ContentSafetyClient
-    from azure.identity import DefaultAzureCredential
+    from azure.core.credentials import AzureKeyCredential
     from azure.ai.contentsafety.models import AnalyzeTextOptions
     AZURE_AVAILABLE = True
 except ImportError:
@@ -32,7 +32,7 @@ class ModerationAgent:
         if self.azure_enabled:
             self.client = ContentSafetyClient(
                 endpoint=self.cs_endpoint,
-                credential=DefaultAzureCredential()
+                credential=AzureKeyCredential(self.cs_key)
             )
 
         # Lista mínima de palabras prohibidas para modo sin Azure

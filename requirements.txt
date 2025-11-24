@@ -6,3 +6,7 @@ gTTS==2.5.3
 semantic-kernel==1.13.0
 azure-identity==1.17.1
 azure-ai-inference==1.0.0b5
+azure-ai-contentsafety==1.0.0b1
+azure-cognitiveservices-speech==1.37.0
+azure-ai-translation-text==1.0.0b1
+requests==2.31.0
