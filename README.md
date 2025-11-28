@@ -40,6 +40,7 @@ graph TD
   F & G & H -->|Respuesta Generada| I[Respuesta Final \n (Web App / Web PubSub)]
 ```
 
+
 - El frontend Next.js entrega la consulta al orquestador FastAPI, que aplica Azure Content Safety antes de cualquier procesamiento.
 - El router de intención enruta la petición al agente adecuado: `Educator Agent` usa Azure OpenAI y Azure Search para explicaciones, `RAG Agent` obtiene información oficial desde Azure AI Search/Cosmos DB, y `Notification Agent` publica tareas en Event Grid y Azure Communication Services.
 - La respuesta final se entrega al usuario vía WebSockets (Web PubSub) o REST, y se audita mediante Application Insights.
