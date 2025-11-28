@@ -26,41 +26,24 @@ Para probar las capacidades del sistema, intenta estas interacciones en el chat:
 2.  **Información Hiperlocal**: *"¿Hay algún evento de reciclaje cerca de mi municipio?"* (El orquestador filtrará eventos por tu ubicación en el perfil).
 3.  **Moderación de Seguridad**: Intenta escribir un mensaje agresivo en el foro. (El agente `ModerationAgent` interceptará el mensaje antes de publicarlo).
 
-## Estructura del repositorio
-
-```
-CivicAIHub/
-├── app.py                  # App Streamlit principal
-├── requirements.txt        # Dependencias
-├── README.md
-├── config/.env.example     # Plantilla de variables de entorno
-├── data/                   # Catálogos locales (JSONs)
-└── src/
-    ├── agents/                 # 🧠 Cerebro del sistema Multi-Agente
-    │   ├── orchestrator.py     # Coordinador principal de peticiones
-    │   ├── rag_agent.py        # Agente de búsqueda de información
-    │   ├── educator_agent.py   # Agente de explicación didáctica
-    │   ├── moderation_agent.py # Lógica de moderación
-    │   ├── notifications_agent.py # Gestión de notificaciones
-    │   └── ingestion_agent.py  # Carga de datos
-    ├── accessibility.py    # Integración Azure Speech/Translator
-    ├── forum_store.py      # Lógica de foros
-    ├── profile_store.py    # Gestión de usuarios
-    └── tag_service.py      # Gestión de intereses
-```
 ### Flujo de Orquestación
 
 ```mermaid
 graph TD
-    A[Usuario] -->|Consulta| B(Orquestador)
-    B -->|Análisis de Seguridad| C{Azure Content Safety}
-    C -->|Inseguro| D[Bloqueo / Advertencia]
-    C -->|Seguro| E{Router de Intención}
-    E -->|Duda compleja| F[Educator Agent]
-    E -->|Dato oficial| G[RAG Agent]
-    E -->|Novedades| H[Notification Agent]
-    F & G & H -->|Respuesta Generada| I[Respuesta Final]
+  A[Usuario] -->|Consulta| B(Orquestador FastAPI)
+  B -->|Análisis de Seguridad| C{Azure Content Safety}
+  C -->|Inseguro| D[Bloqueo / Advertencia (ACS + Logs)]
+  C -->|Seguro| E{Router de Intención}
+  E -->|Duda compleja| F[Educator Agent \n (Azure OpenAI + Azure Search)]
+  E -->|Dato oficial| G[RAG Agent \n (Azure OpenAI + Azure Search Index)]
+  E -->|Novedades| H[Notification Agent \n (Event Grid + Communication Services)]
+  F & G & H -->|Respuesta Generada| I[Respuesta Final \n (Web App / Web PubSub)]
 ```
+
+- El frontend Next.js entrega la consulta al orquestador FastAPI, que aplica Azure Content Safety antes de cualquier procesamiento.
+- El router de intención enruta la petición al agente adecuado: `Educator Agent` usa Azure OpenAI y Azure Search para explicaciones, `RAG Agent` obtiene información oficial desde Azure AI Search/Cosmos DB, y `Notification Agent` publica tareas en Event Grid y Azure Communication Services.
+- La respuesta final se entrega al usuario vía WebSockets (Web PubSub) o REST, y se audita mediante Application Insights.
+
 ## Requerimientos previos
 
 - Python 3.10+
