@@ -29,15 +29,26 @@ Para probar las capacidades del sistema, intenta estas interacciones en el chat:
 ### Flujo de Orquestación
 
 ```mermaid
-graph TD
-  A[Usuario] -->|Consulta| B(Orquestador FastAPI)
-  B -->|Análisis de Seguridad| C{Azure Content Safety}
-  C -->|Inseguro| D[Bloqueo / Advertencia (ACS + Logs)]
-  C -->|Seguro| E{Router de Intención}
-  E -->|Duda compleja| F[Educator Agent \n (Azure OpenAI + Azure Search)]
-  E -->|Dato oficial| G[RAG Agent \n (Azure OpenAI + Azure Search Index)]
-  E -->|Novedades| H[Notification Agent \n (Event Grid + Communication Services)]
-  F & G & H -->|Respuesta Generada| I[Respuesta Final \n (Web App / Web PubSub)]
+graph LR
+    U["Ciudadano <br/> UI Web / Móvil"] --> UI["Next.js App Router"]
+    UI -->|REST / WS| API["FastAPI Orchestrator"]
+    API --> CS{"Azure Content Safety"}
+    CS -->|Bloqueado| Block["Barrera + Alerting <br/> (Content Safety Logs)"]
+    CS -->|Seguro| Router{"Router de Intención"}
+    Router -->|Preguntas complejas| Educator["Educator Agent <br/> Azure OpenAI + Azure AI Search"]
+    Router -->|Datos oficiales| RAG["RAG Agent <br/> Azure OpenAI + Search Index"]
+    Router -->|Alertas / eventos| Notify["Notification Agent <br/> Event Grid + Communication Services"]
+    Educator --> Search["Azure AI Search"]
+    Educator --> Storage["Azure Cosmos DB / Storage"]
+    RAG --> Search
+    RAG --> Storage
+    Notify --> Maps["Azure Maps / Spatial Services"]
+    Notify --> ACS["Azure Communication Services"]
+    Educator & RAG --> Insights["Application Insights / Logging"]
+    Notify --> Insights
+    Insights --> SecOps["Operational Dashboards"]
+    ACS --> PubSub["Azure Web PubSub / SignalR"]
+    PubSub --> UI
 ```
 
 
