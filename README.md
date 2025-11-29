@@ -66,6 +66,22 @@ graph LR
   - Azure Communication Services o Event Grid (for alerts)
   - Azure AI Content Safety (for forum moderation)
 
+## Infrastructure Deployment
+
+This project includes a Bicep template to automate the provisioning of the required Azure infrastructure (App Service, Azure OpenAI, Cosmos DB, etc.).
+
+1.  **Install Azure CLI**: Ensure you have the [Azure CLI](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli) installed.
+2.  **Login**: `az login`
+3.  **Create Resource Group**:
+    ```bash
+    az group create --name rg-civic-pulse-dev --location eastus
+    ```
+4.  **Deploy Resources**:
+    ```bash
+    az deployment group create --resource-group rg-civic-pulse-dev --template-file infra/main.bicep --parameters infra/parameters.json
+    ```
+5.  **Configure Environment**: Use the outputs from the deployment to populate your `.env` file.
+
 ## Installation and local execution
 
 ```bash
