@@ -28,30 +28,6 @@ Although public information exists, it is difficult to consume. Citizens face ba
 
 ### Orchestration flow
 
-```mermaid
-graph LR
-    U["Ciudadano <br/> UI Web / Móvil"] --> UI["Next.js App Router"]
-    UI -->|REST / WS| API["FastAPI Orchestrator"]
-    API --> CS{"Azure Content Safety"}
-    CS -->|Bloqueado| Block["Barrera + Alerting <br/> (Content Safety Logs)"]
-    CS -->|Seguro| Router{"Router de Intención"}
-    Router -->|Preguntas complejas| Educator["Educator Agent <br/> Azure OpenAI + Azure AI Search"]
-    Router -->|Datos oficiales| RAG["RAG Agent <br/> Azure OpenAI + Search Index"]
-    Router -->|Alertas / eventos| Notify["Notification Agent <br/> Event Grid + Communication Services"]
-    Educator --> Search["Azure AI Search"]
-    Educator --> Storage["Azure Cosmos DB / Storage"]
-    RAG --> Search
-    RAG --> Storage
-    Notify --> Maps["Azure Maps / Spatial Services"]
-    Notify --> ACS["Azure Communication Services"]
-    Educator & RAG --> Insights["Application Insights / Logging"]
-    Notify --> Insights
-    Insights --> SecOps["Operational Dashboards"]
-    ACS --> PubSub["Azure Web PubSub / SignalR"]
-    PubSub --> UI
-```
-
-
 - The Next.js frontend sends the query to the FastAPI orchestrator, which applies Azure Content Safety before any processing.
 - The intent router directs the request to the appropriate agent:
     - Educator Agent uses Azure OpenAI and Azure Search for explanations.
