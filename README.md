@@ -51,9 +51,9 @@ graph LR
 
 - The Next.js frontend sends the query to the FastAPI orchestrator, which applies Azure Content Safety before any processing.
 - The intent router directs the request to the appropriate agent:
-- - Educator Agent uses Azure OpenAI and Azure Search for explanations.
-- - RAG Agent retrieves official information from Azure AI Search/Cosmos DB.
-- - Notification Agent publishes tasks in Event Grid and Communication Services.
+    - Educator Agent uses Azure OpenAI and Azure Search for explanations.
+    - RAG Agent retrieves official information from Azure AI Search/Cosmos DB.
+    - Notification Agent publishes tasks in Event Grid and Communication Services.
 - The final response is delivered to the user via WebSockets (Web PubSub) or REST, and audited through Application Insights.
 
 ## Prerequisites
