@@ -22,6 +22,9 @@ Although public information exists, it is difficult to consume. Citizens face ba
 2.  **Hyperlocal Information**: *“Is there a recycling event near my municipality?”* (The orchestrator will filter events by your profile location.)
 3.  **Safety moderation**: Try writing an aggressive message in the forum. (The ModerationAgent will intercept the message before publishing.)
 
+### Azure Infrastructure Overview
+
+![Azure Infrastructure](assets/Azure%20Infraestructure.png)
 
 ### Orchestration flow
 
